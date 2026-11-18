@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Augusto, Nadela",
+  "editor": "wokwi",
+  "parts": [
+    { "id": "uno", "type": "wokwi-arduino-uno", "left": 0, "top": 0, "attrs": {} },
+    { "id": "potMu", "type": "wokwi-potentiometer", "left": 0, "top": 280, "attrs": { "value": "644" } },
+    { "id": "potNoise", "type": "wokwi-potentiometer", "left": 110, "top": 280, "attrs": { "value": "512" } },
+    { "id": "potFreq", "type": "wokwi-potentiometer", "left": 220, "top": 280, "attrs": { "value": "205" } },
+    { "id": "btnReset", "type": "wokwi-pushbutton", "left": 340, "top": 290, "attrs": { "color": "red", "label": "Reset filter" } }
+  ],
+  "connections": [
+    [ "potMu:VCC", "uno:5V", "red", [] ],
+    [ "potMu:GND", "uno:GND.2", "black", [] ],
+    [ "potMu:SIG", "uno:A0", "green", [] ],
+    [ "potNoise:VCC", "uno:5V", "red", [] ],
+    [ "potNoise:GND", "uno:GND.2", "black", [] ],
+    [ "potNoise:SIG", "uno:A1", "orange", [] ],
+    [ "potFreq:VCC", "uno:5V", "red", [] ],
+    [ "potFreq:GND", "uno:GND.3", "black", [] ],
+    [ "potFreq:SIG", "uno:A2", "blue", [] ],
+    [ "btnReset:1.l", "uno:2", "purple", [] ],
+    [ "btnReset:2.l", "uno:GND.3", "black", [] ]
+  ],
+  "serialMonitor": { "display": "plotter" },
+  "dependencies": {}
+}
